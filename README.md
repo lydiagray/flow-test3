@@ -13,6 +13,7 @@
 ## feature-3 commit-3
 
 ## feature-4 commit-1
+## feature-4 commit-2
 
 ### release-0.2 fix-1
 ### release-0.2 fix-2
