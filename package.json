@@ -1,0 +1,82 @@
+{
+  "name": "fostering-enquiry",
+  "version": "1.0.0",
+  "description": "fostering-enquiry form",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage --collectCoverageFrom=src/components/**/*.{js} --collectCoverageFrom=src/actions/**/*.{js} --collectCoverageFrom=src/reducers/**/*.{js} --collectCoverageFrom=src/helpers/**/*.{js}",
+    "start": "webpack-dev-server --mode development --open",
+    "lint": "eslint src",
+    "build": "webpack --mode production",
+    "build:copy": "webpack --mode production && cp -r dist/. ",
+    "prepush": "echo 'Starting PrePush' && npm run test:coverage && npm run lint",
+    "commit": "git-cz"
+  },
+  "author": "SMBC",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.22.2",
+    "react": "^16.9.0",
+    "react-async-script": "^0.11.1",
+    "react-dom": "^16.9.0",
+    "react-google-recaptcha": "^1.1.0",
+    "react-router": "^4.3.1",
+    "sanitize-html": "^1.20.1",
+    "smbc-react-components": "^4.2.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.6.0",
+    "cz-conventional-changelog": "^3.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jest": "^21.27.2",
+    "eslint-plugin-react": "^7.18.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.4",
+    "jest-fetch-mock": "^1.7.4",
+    "path": "^0.12.7",
+    "react-test-renderer": "^16.12.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "./setupJest.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "json-summary"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!smbc-react-components).+\\.js$"
+    ],
+    "testURL": "http://localhost",
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
