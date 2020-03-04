@@ -18,13 +18,12 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "header-max-length": [0, "always", 90]
     }
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog",
-      "maxHeaderWidth": 90
+      "defaultType": "major"
     }
   },
   "husky": {
