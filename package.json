@@ -3,24 +3,15 @@
   "version": "1.0.0",
   "description": "repo for testing flow and commit controls",
   "main": "index.js",
-  "scripts": {
-    "cm": "git-cz",
-    "commit": "cm"
-  },
+  "scripts": {},
   "author": "SMBC",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.6.0",
     "cz-conventional-changelog": "^3.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^1.0.0-rc.13",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "husky": "^1.0.0-rc.13"
   },
   "commitlint": {
     "extends": [
