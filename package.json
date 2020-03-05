@@ -1,0 +1,35 @@
+{
+  "name": "flow-test3",
+  "version": "1.0.0",
+  "description": "repo for testing flow and commit controls",
+  "main": "index.js",
+  "scripts": {},
+  "author": "SMBC",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "cz-conventional-changelog": "^3.1.0",
+    "husky": "^1.0.0-rc.13"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [2, "always", ["build","chore","docs","feat","fix","major","minor","patch","perf","refactor","revert","style","test","wip"]],
+      "scope-case": [2, "always", ["camel-case","kebab-case","lower-case"]]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
