@@ -2,18 +2,9 @@
 
 type=$1
 
-#case $type in
-#	patch|minor|major
-#		npm version ${type} --no-git-tag-version ;;
-#	*)
-#		echo "You can only choose from patch, minor, or major" ;;
-#esac
-
-if [[ "$type" == "patch" || "$type" == "minor" || "$type" == "major" ]]; 
-then
-	npm version ${type} --no-git-tag-version;
-fi
-
-exit 0
-
-#npm version ${type} --no-git-tag-version
+case "$1" in
+	'patch'|'minor'|'major')
+		npm version ${1} --no-git-tag-version && echo "Version bump successful. Press enter to close the terminal" && read;;
+	*)
+		echo "You can only choose from patch, minor, or major." && echo "Press enter to close the terminal" && read ;;
+esac
