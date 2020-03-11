@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "repo for testing flow and commit controls",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "patch": "npm --no-git-tag-version version patch && git add . && git cz",
+    "minor": "npm --no-git-tag-version version minor && git add . && git cz",
+    "major": "npm --no-git-tag-version version major && git add . && git cz"
+  },
   "author": "SMBC",
   "license": "ISC",
   "dependencies": {},
