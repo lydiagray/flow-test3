@@ -26,3 +26,5 @@
 ### release-2.0 fix-1
 
 ### hotfix-0.3
+
+### version 1.0.1
